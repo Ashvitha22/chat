@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .app-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .chat-section {
+            display: flex;
+            flex: 1;
+        }
+
+        .chat-sidebar {
+            background-color: #f4f4f4;
+            width: 25%;
+            padding: 1rem;
+            border-right: 1px solid #ddd;
+        }
+
+        .chat-sidebar h2 {
+            margin-top: 0;
+        }
+
+        .chat-sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .chat-sidebar .room {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .chat-sidebar .room:hover {
+            background-color: #ddd;
+        }
+
+        .chat-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .message-form {
+            display: flex;
+        }
+
+        .message-form input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .message-form button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .message-form button:hover {
+            background-color: #45a049;
+        }
+
+        .app-footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>Chat Application</h1>
+        </header>
+
+        <!-- Chat Section -->
+        <div class="chat-section">
+            <!-- Chat Sidebar -->
+            <aside class="chat-sidebar">
+                <h2>Chat Rooms</h2>
+                <ul id="chat-rooms">
+                    <li class="room">General</li>
+                    <li class="room">Tech Talk</li>
+                    <li class="room">Gaming</li>
+                </ul>
+            </aside>
+
+            <!-- Chat Box -->
+            <main class="chat-box">
+                <div id="messages" class="messages">
+                    <!-- Messages will appear here -->
+                </div>
+
+                <form id="message-form" class="message-form">
+                    <input type="text" id="message-input" placeholder="Type your message..." required />
+                    <button type="submit">Send</button>
+                </form>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2025 Chat Application</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
